@@ -4,6 +4,7 @@ import Domain.ShopService;
 import Infrastructure.Error;
 import Infrastructure.*;
 import Persistance.IStore;
+import com.google.inject.Inject;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +15,7 @@ import java.util.UUID;
  */
 public class ShopServicesRepository extends Repository<ShopService> {
 
+    @Inject
     public ShopServicesRepository(IStore<ShopService> store) {
         super(store);
     }
