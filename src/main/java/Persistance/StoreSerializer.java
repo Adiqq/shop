@@ -5,6 +5,7 @@ import Infrastructure.OkResult;
 import Infrastructure.Response;
 import Infrastructure.Result;
 
+import java.beans.ExceptionListener;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.File;
@@ -22,7 +23,11 @@ public abstract class StoreSerializer<T> {
 
     public StoreSerializer(String filename) {
         this.filename = filename;
-        serialize(new ArrayList<T>());
+        try {
+            deserialize();
+        } catch (Exception e) {
+            serialize(new ArrayList<T>());
+        }
     }
 
     protected Response<List<T>> deserialize() {
@@ -48,6 +53,12 @@ public abstract class StoreSerializer<T> {
             store.createNewFile();
             FileOutputStream fos = new FileOutputStream(filename);
             XMLEncoder encoder = new XMLEncoder(fos);
+            encoder.setExceptionListener(new ExceptionListener() {
+                @Override
+                public void exceptionThrown(Exception e) {
+                    e.printStackTrace();
+                }
+            });
             encoder.writeObject(services);
             encoder.close();
             fos.close();

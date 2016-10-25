@@ -1,6 +1,9 @@
 package UI;
 
+import Service.ServiceModule;
+import UI.Factories.FXMLLoaderFactory;
 import com.google.inject.AbstractModule;
+import com.google.inject.Injector;
 import com.google.inject.Provides;
 import javafx.stage.Stage;
 
@@ -12,11 +15,16 @@ public class UIModule extends AbstractModule {
     }
 
     protected void configure() {
-        //install(new DomainModule());
+        install(new ServiceModule());
     }
 
     @Provides
     public Stage getStage() {
         return stage;
+    }
+
+    @Provides
+    public FXMLLoaderFactory getFXMLLoaderFactory(Injector injector) {
+        return new FXMLLoaderFactory(injector);
     }
 }

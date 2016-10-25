@@ -8,11 +8,11 @@ import java.util.UUID;
 public abstract class Entity {
     private UUID id;
 
-    public UUID getId() {
-        return id;
+    public String getId() {
+        return id == null ? "0" : id.toString();
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = UUID.fromString(id);
     }
 }

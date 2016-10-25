@@ -20,18 +20,18 @@ public class ShopServicesRepository extends Repository<ShopService> {
         super(store);
     }
 
-    public Response<Iterable<ShopService>> GetServices() {
+    public Response<List<ShopService>> GetServices() {
         Response<List<ShopService>> response = getResponse();
         return new Response<>(response.getResult(), response.getContent());
     }
 
-    public Response<ShopService> GetServiceById(UUID id) {
+    public Response<ShopService> GetServiceById(String id) {
         Response<List<ShopService>> response = getResponse();
         if (response.getResult().isSuccess()) {
             Optional<ShopService> result = response
                     .getContent()
                     .stream()
-                    .filter(item -> item.getId() == id).findFirst();
+                    .filter(item -> item.getId().equalsIgnoreCase(id)).findFirst();
             if (result.isPresent()) {
                 return new Response<>(new OkResult(), result.get());
             } else {
@@ -63,7 +63,7 @@ public class ShopServicesRepository extends Repository<ShopService> {
         Response<List<ShopService>> response = getResponse();
         if (response.getResult().isSuccess()) {
             UUID id = UUID.randomUUID();
-            service.setId(id);
+            service.setId(id.toString());
             items.add(service);
             return new Response<>(new OkResult(), service);
         }
@@ -71,10 +71,10 @@ public class ShopServicesRepository extends Repository<ShopService> {
 
     }
 
-    public Result RemoveService(ShopService service) {
+    public Result RemoveServiceById(String id) {
         Response<List<ShopService>> response = getResponse();
         if (response.getResult().isSuccess()) {
-            Optional<ShopService> result = items.stream().filter(item -> item.getId() == service.getId()).findFirst();
+            Optional<ShopService> result = items.stream().filter(item -> item.getId().equalsIgnoreCase(id)).findFirst();
             if (result.isPresent()) {
                 if (items.remove(result.get())) {
                     return new OkResult();
@@ -86,6 +86,10 @@ public class ShopServicesRepository extends Repository<ShopService> {
             }
         }
         return new FailResult(response.getResult().getDescription());
+    }
+
+    public Result RemoveService(ShopService service) {
+        return RemoveServiceById(service.getId());
     }
 
     public Result UpdateService(ShopService service) {

@@ -4,16 +4,26 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class ShopServiceViewModel {
+
     private final StringProperty name;
     private final StringProperty price;
-
+    private String id;
     public ShopServiceViewModel() {
-        this("", "");
+        this(null, "", "");
     }
 
-    public ShopServiceViewModel(String name, String price) {
+    public ShopServiceViewModel(String id, String name, String price) {
+        this.id = id;
         this.name = new SimpleStringProperty(name);
         this.price = new SimpleStringProperty(price);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public StringProperty getNameProperty() {

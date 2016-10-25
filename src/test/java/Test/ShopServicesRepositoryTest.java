@@ -10,6 +10,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -32,7 +34,7 @@ public class ShopServicesRepositoryTest {
 
     @Test
     public void getServices() throws Exception {
-        Response<Iterable<ShopService>> result = repository.GetServices();
+        Response<List<ShopService>> result = repository.GetServices();
 
         assertTrue(result.getResult().isSuccess());
         assertNotNull(result.getContent());
@@ -70,8 +72,10 @@ public class ShopServicesRepositoryTest {
         ShopService service = getShopService();
         //Act
         ShopService result = repository.AddService(service).getContent();
+        Result saveResult = repository.Save();
         //Assert
         assertNotNull(result);
+        assertTrue(saveResult.isSuccess());
     }
 
     @Test
@@ -80,8 +84,10 @@ public class ShopServicesRepositoryTest {
         ShopService service = getShopService();
         //Act
         ShopService result = repository.AddService(service).getContent();
+        Result saveResult = repository.Save();
         //Assert
         assertTrue(repository.RemoveService(service).isSuccess());
+        assertTrue(saveResult.isSuccess());
     }
 
     @Test
@@ -95,9 +101,10 @@ public class ShopServicesRepositoryTest {
         result2.setName(newName);
         Result updateResult = repository.UpdateService(result2);
         ShopService finalResult = repository.GetServiceById(result.getId()).getContent();
-
+        Result saveResult = repository.Save();
         //Assert
         assertTrue(updateResult.isSuccess());
+        assertTrue(saveResult.isSuccess());
         assertTrue(finalResult.getId() == result.getId());
 
     }
@@ -105,7 +112,7 @@ public class ShopServicesRepositoryTest {
     private ShopService getShopService() {
         ShopService service = new ShopService();
         service.setName("Test");
-        Money money = new Money(100);
+        Money money = new Money("100");
         service.setPrice(money);
         return service;
     }
