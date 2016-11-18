@@ -1,12 +1,13 @@
-package UI.Controller;
+package UI.Controller.Admin;
 
+import UI.Controller.ModalController;
 import UI.Model.ShopServiceViewModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class ShopServiceEditDialogController {
+public class ShopServiceEditDialogController extends ModalController {
 
     @FXML
     private TextField nameField;
@@ -16,12 +17,6 @@ public class ShopServiceEditDialogController {
     private Stage dialogStage;
 
     private ShopServiceViewModel shopService;
-    private boolean okClicked = false;
-
-    @FXML
-    private void initialize() {
-
-    }
 
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
@@ -34,17 +29,13 @@ public class ShopServiceEditDialogController {
         priceField.setText(shopService.getPrice());
     }
 
-    public boolean isOkClicked() {
-        return okClicked;
-    }
-
     @FXML
     private void handleOk() {
         if (isInputValid()) {
             shopService.setName(nameField.getText());
             shopService.setPrice(priceField.getText());
 
-            okClicked = true;
+            super.okClicked = true;
             dialogStage.close();
         }
     }

@@ -26,12 +26,20 @@ public class MainController implements Initializable {
         this.loaderFactory = loader;
     }
 
-    public void showShopServiceOverview() {
+    public void showAdminPerspective() {
+        show("/View/Admin/ShopServiceOverview.fxml");
+    }
+
+    public void showUserPerspective() {
+        show("/View/User/User.fxml");
+    }
+
+    private void show(String view) {
         try {
             FXMLLoader loader = loaderFactory.getFXMLLoader();
-            loader.setLocation(getClass().getResource("/View/ShopServiceOverview.fxml"));
-            AnchorPane shopServiceOverview = loader.load();
-            rootLayout.setCenter(shopServiceOverview);
+            loader.setLocation(getClass().getResource(view));
+            AnchorPane pane = loader.load();
+            rootLayout.setCenter(pane);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -40,6 +48,6 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        showShopServiceOverview();
+        showAdminPerspective();
     }
 }

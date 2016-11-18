@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_101" class="java.beans.XMLDecoder">
-    <object class="java.util.ArrayList"/>
+    <object class="java.util.ArrayList">
+        <void method="add">
+            <object class="Domain.ShopService">
+                <void property="id">
+                    <string>f3ab3af2-9f05-41e2-a975-507b8c854ae0</string>
+                </void>
+                <void property="name">
+                    <string>test</string>
+                </void>
+                <void property="price">
+                    <object class="Domain.Money">
+                        <void property="value">
+                            <string>5.00</string>
+                        </void>
+                    </object>
+                </void>
+            </object>
+        </void>
+        <void method="add">
+            <object class="Domain.ShopService">
+                <void property="id">
+                    <string>5453dbad-9837-41ff-a478-0e998c3f4708</string>
+                </void>
+                <void property="name">
+                    <string>test</string>
+                </void>
+                <void property="price">
+                    <object class="Domain.Money">
+                        <void property="value">
+                            <string>10.00</string>
+                        </void>
+                    </object>
+                </void>
+            </object>
+        </void>
+    </object>
 </java>

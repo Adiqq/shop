@@ -20,7 +20,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class ShopServicesRepositoryTest {
 
-    ShopServicesRepository repository;
+    private ShopServicesRepository repository;
 
     @Before
     public void setUp() throws Exception {
@@ -52,7 +52,7 @@ public class ShopServicesRepositoryTest {
         ShopService result = repository.AddService(service).getContent();
         ShopService result2 = repository.GetServiceById(result.getId()).getContent();
         //Assert
-        assertTrue(result.getId() == result2.getId());
+        assertTrue(result.getId().equals(result2.getId()));
     }
 
     @Test
@@ -63,7 +63,7 @@ public class ShopServicesRepositoryTest {
         ShopService result = repository.AddService(service).getContent();
         ShopService result2 = repository.GetServiceByName(result.getName().toLowerCase()).getContent();
         //Assert
-        assertTrue(result.getId() == result2.getId());
+        assertTrue(result.getId().equals(result2.getId()));
     }
 
     @Test
@@ -105,14 +105,14 @@ public class ShopServicesRepositoryTest {
         //Assert
         assertTrue(updateResult.isSuccess());
         assertTrue(saveResult.isSuccess());
-        assertTrue(finalResult.getId() == result.getId());
+        assertTrue(finalResult.getId().equals(result.getId()));
 
     }
 
     private ShopService getShopService() {
         ShopService service = new ShopService();
         service.setName("Test");
-        Money money = new Money("100");
+        Money money = new Money(100L);
         service.setPrice(money);
         return service;
     }
