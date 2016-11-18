@@ -9,14 +9,10 @@
             xmlns="http://javafx.com/javafx/8" fx:controller="UI.Controller.MainController">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
-            <menus>
-                <Menu mnemonicParsing="false" text="View">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#showAdminPerspective" text="Admin"/>
-                        <MenuItem mnemonicParsing="false" onAction="#showUserPerspective" text="User"/>
-                    </items>
-                </Menu>
-            </menus>
+            <Menu mnemonicParsing="false" text="View">
+                <MenuItem mnemonicParsing="false" onAction="#showAdminPerspective" text="Admin"/>
+                <MenuItem mnemonicParsing="false" onAction="#showUserPerspective" text="User"/>
+            </Menu>
         </MenuBar>
     </top>
 </BorderPane>

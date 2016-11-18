@@ -2,12 +2,15 @@ package Domain;
 
 import Infrastructure.Entity;
 
+import java.util.List;
+
 /**
  * Created by Adiq on 16.10.2016.
  */
 public class ShopService extends Entity {
     private String name;
     private Money price;
+    private List<ShopService> services;
 
     public String getName() {
         return name;

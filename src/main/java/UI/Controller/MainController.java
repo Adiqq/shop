@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -15,14 +14,12 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
-    private Stage primaryStage;
     private FXMLLoaderFactory loaderFactory;
     @FXML
     private BorderPane rootLayout;
 
     @Inject
-    public MainController(Stage primaryStage, FXMLLoaderFactory loader) {
-        this.primaryStage = primaryStage;
+    public MainController(FXMLLoaderFactory loader) {
         this.loaderFactory = loader;
     }
 

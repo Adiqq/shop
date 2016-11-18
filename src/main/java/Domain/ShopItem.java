@@ -1,11 +1,12 @@
 package Domain;
 
-/**
- * Created by Adiq on 16.10.2016.
- */
+import Domain.ShopItemType.ShopItemType;
+
+import java.util.List;
+
 public class ShopItem extends ShopService {
     public Category category;
     public Picture picture;
-    public boolean isBorrowable;
-    public InstrumentHandling instrumentHandling;
+    private ShopItemType itemType;
+    private List<ShopService> services;
 }
