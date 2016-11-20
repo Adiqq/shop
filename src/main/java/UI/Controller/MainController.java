@@ -24,7 +24,7 @@ public class MainController implements Initializable {
     }
 
     public void showAdminPerspective() {
-        show("/View/Admin/ShopServiceOverview.fxml");
+        show("/View/Admin/AdminTabs.fxml");
     }
 
     public void showUserPerspective() {
