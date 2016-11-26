@@ -1,6 +1,6 @@
 package UI.Services;
 
-import UI.Controller.Admin.ShopServiceEditDialogController;
+import UI.Controller.Admin.ShopServices.ShopServiceEditDialogController;
 import UI.Factories.FXMLLoaderFactory;
 import UI.Model.ShopServiceViewModel;
 import com.google.inject.Inject;
@@ -25,7 +25,7 @@ public class ViewLoader {
 
     public Modal load(ShopServiceViewModel service) {
         FXMLLoader loader = loaderFactory.getFXMLLoader();
-        String viewPath = "/View/Admin/ShopServiceEditDialog.fxml";
+        String viewPath = "/View/Admin/ShopServices/ShopServiceEditDialog.fxml";
         View view = loadView(viewPath, loader);
         Stage stage = getModalStage(view, "Edit shop service");
         ShopServiceEditDialogController controller = setController(stage, service, loader);

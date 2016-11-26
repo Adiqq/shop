@@ -2,7 +2,7 @@
 <java version="1.8.0_101" class="java.beans.XMLDecoder">
     <object class="java.util.ArrayList">
         <void method="add">
-            <object class="Domain.ShopService">
+            <object class="Domain.Services.ShopService">
                 <void property="id">
                     <string>f3ab3af2-9f05-41e2-a975-507b8c854ae0</string>
                 </void>
@@ -10,7 +10,7 @@
                     <string>test</string>
                 </void>
                 <void property="price">
-                    <object class="Domain.Money">
+                    <object class="Domain.Common.Money">
                         <void property="value">
                             <string>5.00</string>
                         </void>
@@ -19,7 +19,7 @@
             </object>
         </void>
         <void method="add">
-            <object class="Domain.ShopService">
+            <object class="Domain.Services.ShopService">
                 <void property="id">
                     <string>5453dbad-9837-41ff-a478-0e998c3f4708</string>
                 </void>
@@ -27,7 +27,7 @@
                     <string>test</string>
                 </void>
                 <void property="price">
-                    <object class="Domain.Money">
+                    <object class="Domain.Common.Money">
                         <void property="value">
                             <string>10.00</string>
                         </void>

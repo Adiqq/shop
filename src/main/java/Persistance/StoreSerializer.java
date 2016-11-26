@@ -5,61 +5,49 @@ import Infrastructure.OkResult;
 import Infrastructure.Response;
 import Infrastructure.Result;
 
-import java.beans.ExceptionListener;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Created by Adiq on 16.10.2016.
+ * Abstract class with common methods for persisting aggregate roots
+ * @param <T>
  */
-public abstract class StoreSerializer<T> {
+public abstract class StoreSerializer<T> implements IStore<T> {
     private final String filename;
 
     public StoreSerializer(String filename) {
         this.filename = filename;
-        try {
-            deserialize();
-        } catch (Exception e) {
-            serialize(new ArrayList<T>());
-        }
     }
 
-    protected Response<List<T>> deserialize() {
+    public Response<T> deserialize() {
         File store = new File(filename);
         try {
             store.createNewFile();
             FileInputStream fis = new FileInputStream(filename);
             XMLDecoder decoder = new XMLDecoder(fis);
-            List<T> result = (List<T>) decoder.readObject();
+            T result = (T) decoder.readObject();
             decoder.close();
             fis.close();
             return new Response<>(new OkResult(), result);
         } catch (ArrayIndexOutOfBoundsException e) {
-            return new Response<>(new OkResult(), new ArrayList<T>());
+            return new Response<>(new FailResult(e.getLocalizedMessage()), null);
         } catch (IOException e) {
             return new Response<>(new FailResult(e.getLocalizedMessage()), null);
         }
     }
 
-    protected Result serialize(List<T> services) {
+    public Result serialize(T aggregateRoot) {
         File store = new File(filename);
         try {
             store.createNewFile();
             FileOutputStream fos = new FileOutputStream(filename);
             XMLEncoder encoder = new XMLEncoder(fos);
-            encoder.setExceptionListener(new ExceptionListener() {
-                @Override
-                public void exceptionThrown(Exception e) {
-                    e.printStackTrace();
-                }
-            });
-            encoder.writeObject(services);
+            encoder.setExceptionListener(e -> e.printStackTrace());
+            encoder.writeObject(aggregateRoot);
             encoder.close();
             fos.close();
             return new OkResult();
