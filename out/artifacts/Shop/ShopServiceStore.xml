@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_101" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="Domain.ShopService">
+    <void property="id">
+     <string>5ea6d2ed-d93e-443e-adc9-b674c2a16c2b</string>
+    </void>
+    <void property="name">
+     <string>test</string>
+    </void>
+    <void property="price">
+     <object class="Domain.Money">
+      <void property="value">
+       <string>5.00</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Domain.ShopService">
+    <void property="id">
+     <string>0599127d-5d3c-44b5-9b3f-da3d436c9e07</string>
+    </void>
+    <void property="name">
+     <string>test</string>
+    </void>
+    <void property="price">
+     <object class="Domain.Money">
+      <void property="value">
+       <string>5.10</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Domain.ShopService">
+    <void property="id">
+     <string>aee3f117-c09d-4f05-ad9c-c74403ef51ef</string>
+    </void>
+    <void property="name">
+     <string>test</string>
+    </void>
+    <void property="price">
+     <object class="Domain.Money">
+      <void property="value">
+       <string>5.12</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
