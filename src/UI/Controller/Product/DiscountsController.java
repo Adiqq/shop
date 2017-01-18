@@ -16,6 +16,9 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+/**
+ * Controller responsible for displaying discounts for selected product
+ */
 public class DiscountsController extends TabController {
     private ProductViewModel productViewModel;
     @FXML

@@ -41,7 +41,6 @@ public class Discount {
     }
     /**
      * Date setter as string for easier serialization
-     * @return
      */
     public void setEndDate(String endDate) {
         this.endDate = LocalDate.parse(endDate);
@@ -49,7 +48,7 @@ public class Discount {
 
     /**
      * Date getter as string for easier serialization
-     * @return
+     * @return date as string
      */
     public String getStartDate() {
         if(startDate != null) {
@@ -59,14 +58,13 @@ public class Discount {
     }
     /**
      * Date setter as string for easier serialization
-     * @return
      */
     public void setStartDate(String startDate) {
         this.startDate = LocalDate.parse(startDate);
     }
     /**
      * Date getter as string for easier serialization
-     * @return
+     * @return date as string
      */
     public String getEndDate() {
         if(endDate != null) {

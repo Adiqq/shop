@@ -13,6 +13,9 @@ import javafx.scene.control.TableView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller responsible for displaying features for selected product
+ */
 public class FeaturesController extends TabController {
     private ProductViewModel productViewModel;
     @FXML

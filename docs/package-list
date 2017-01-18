@@ -1,0 +1,14 @@
+Domain
+Domain.Common
+Domain.Factories
+Domain.Infrastructure
+Domain.Products
+Domain.Products.ProductTypes
+Domain.Services
+Persistance
+UI
+UI.Controller
+UI.Controller.Product
+UI.Mediator
+UI.Model
+UI.Services

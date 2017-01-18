@@ -27,6 +27,9 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+/**
+ * Controller responsible for viewing selected product details
+ */
 public class DetailsController extends TabController {
     @FXML
     public Label nameLabel;
