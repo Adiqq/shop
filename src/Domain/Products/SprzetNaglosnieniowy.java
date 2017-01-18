@@ -2,6 +2,9 @@ package Domain.Products;
 
 import Domain.Common.Money;
 
+/**
+ *  Sound equipment
+ */
 public class SprzetNaglosnieniowy extends Product {
     public SprzetNaglosnieniowy() {
         super(Category.SprzetNaglosnieniowy);

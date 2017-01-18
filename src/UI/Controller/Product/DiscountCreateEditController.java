@@ -12,6 +12,9 @@ import javafx.scene.control.Slider;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller responsible for creating/editing discount tab
+ */
 public class DiscountCreateEditController  extends TabController {
     @FXML
     public Slider percentageSlider;

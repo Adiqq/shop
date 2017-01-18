@@ -10,5 +10,6 @@ public class InstrumentMaintenance extends ShopService {
 
     public InstrumentMaintenance(String name, Money price) {
         super(name, price, new ArrayList<>());
+        setPriceType(PriceType.Constant);
     }
 }

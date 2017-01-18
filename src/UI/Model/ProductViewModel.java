@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
 import java.io.ByteArrayInputStream;
 import java.util.Collection;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ProductViewModel extends ShopServiceViewModel {
@@ -28,8 +29,10 @@ public class ProductViewModel extends ShopServiceViewModel {
             this.category.setValue(category);
         }
         ProductType productType = product.getProductType();
-        if(productType != null){
-            this.productType.setValue(productType);
+        if(productType != null && category != null){
+            Optional<ProductType> productTypeOptional = category.getProductTypes().stream()
+                    .filter(x -> x.getType().equals(productType.getType())).findFirst();
+            this.productType.setValue(productTypeOptional.get());
         }
         Collection<Discount> discounts = product.getProductDiscounts();
         if(discounts != null){

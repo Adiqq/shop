@@ -2,6 +2,9 @@ package Domain.Products;
 
 import Domain.Common.Percentage;
 
+/**
+ *  Percentage with valid values, bounded by business logic
+ */
 public class DiscountPercentage extends Percentage {
     public DiscountPercentage(){}
     public DiscountPercentage(int value) {

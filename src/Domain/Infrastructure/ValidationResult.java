@@ -2,6 +2,9 @@ package Domain.Infrastructure;
 
 import java.util.Collection;
 
+/**
+ *  Result for model validation
+ */
 public class ValidationResult {
     private Collection<String> errors;
     public ValidationResult(Collection<String> errors){

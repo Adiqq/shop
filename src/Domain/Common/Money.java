@@ -3,6 +3,9 @@ package Domain.Common;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+/**
+ *  Represent money (currency is not taken in account)
+ */
 public class Money implements Serializable {
     private String value;
 

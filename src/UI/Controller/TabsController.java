@@ -16,10 +16,21 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller wrapping all tab controllers
+ */
 public class TabsController implements Initializable {
     @FXML
     private TabPane tabPane;
     private ShopItemService itemsService;
+
+    /**
+     * Creates new tab
+     * @param tabText
+     * @param viewPath
+     * @param <T>
+     * @return
+     */
     public <T extends TabController> T createTab (String tabText, String viewPath){
         return createTab(tabText,viewPath, true);
     }

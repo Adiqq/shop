@@ -7,9 +7,13 @@ import Domain.Infrastructure.ValidationResult;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Abstract service provided by shop
+ */
 public abstract class ShopService extends Entity {
     private String name;
     private Money price;
+    private PriceType priceType;
     private List<ShopService> services;
 
     public ShopService() {
@@ -59,5 +63,13 @@ public abstract class ShopService extends Entity {
             errors.add("Price is not set");
         }
         return new ValidationResult(errors);
+    }
+
+    public PriceType getPriceType() {
+        return priceType;
+    }
+
+    public void setPriceType(PriceType priceType) {
+        this.priceType = priceType;
     }
 }

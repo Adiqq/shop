@@ -1,5 +1,8 @@
 package Domain.Common;
 
+/**
+ *  Value type representing percentage
+ */
 public abstract class Percentage {
 
     private int value;

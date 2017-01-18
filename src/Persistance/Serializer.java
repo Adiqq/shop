@@ -7,6 +7,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/**
+ * Generic class for data serialization
+ * @param <T> Serializable class
+ */
 public abstract class Serializer<T> {
     private final String filename;
 

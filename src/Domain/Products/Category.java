@@ -3,6 +3,9 @@ package Domain.Products;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ *  Category value type contains product types valid for given category. Class contains predefined instances.
+ */
 public class Category {
     public static final Category Gitara = new Category("Gitara",
             Arrays.asList(

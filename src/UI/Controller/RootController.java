@@ -12,6 +12,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Root controller wrapping all children controllers
+ */
 public class RootController implements Initializable {
     @FXML
     BorderPane rootLayout;

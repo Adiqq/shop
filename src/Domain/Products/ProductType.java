@@ -1,5 +1,8 @@
 package Domain.Products;
 
+/**
+ *  Class for product type
+ */
 public class ProductType {
     private String type;
 

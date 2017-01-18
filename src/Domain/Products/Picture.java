@@ -2,10 +2,17 @@ package Domain.Products;
 
 import java.util.Base64;
 
+/**
+ * Value type representing picture
+ */
 public class Picture {
     private byte[] content;
     private PictureType pictureType;
 
+    /**
+     * Get picture encoded as base-64
+     * @return base-64 encoded string
+     */
     public String getContent() {
         if(content != null) {
             return Base64.getEncoder().encodeToString(content);
@@ -16,6 +23,10 @@ public class Picture {
         return content;
     }
 
+    /**
+     * Set picture with base-64 encoded string
+     * @param content base-64 encoded string
+     */
     public void setContent(String content) {
         if(content != null) {
             this.content = Base64.getDecoder().decode(content);
@@ -34,6 +45,10 @@ public class Picture {
         this.pictureType = pictureType;
     }
 
+    /**
+     * Image extension
+     * @param extension jpg,png
+     */
     public void setPictureType(String extension){
         switch (extension){
             case "jpg":

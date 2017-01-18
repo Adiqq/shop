@@ -11,6 +11,9 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller responsible for creating/editing product feature
+ */
 public class FeatureCreateEditController extends TabController {
     private ProductViewModel productViewModel;
     private FeatureViewModel featureViewModel;

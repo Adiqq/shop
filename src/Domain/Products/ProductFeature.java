@@ -1,5 +1,8 @@
 package Domain.Products;
 
+/**
+ *  Class defining single product feature
+ */
 public class ProductFeature {
     private String name;
     private String value;

@@ -20,6 +20,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller responsible for wrapping Product tab
+ */
 public class OverviewController extends TabController {
     @FXML
     public TextField filterText;
@@ -53,6 +56,10 @@ public class OverviewController extends TabController {
         return shopServiceData;
     }
 
+    /**
+     * Sets shopServiceData and binds it table
+     * @param shopServiceData
+     */
     public void setShopServiceData(ObservableList<ProductViewModel> shopServiceData) {
         this.shopServiceData = shopServiceData;
         productTable.setItems(this.shopServiceData);
@@ -78,6 +85,10 @@ public class OverviewController extends TabController {
         productTable.setItems(filteredData);
     }
 
+    /**
+     * Gets currently select product view model
+     * @return
+     */
     public ProductViewModel getCurrentSelection(){
         int selectedIndex = productTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {

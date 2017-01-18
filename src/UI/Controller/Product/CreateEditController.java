@@ -22,6 +22,9 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.util.ResourceBundle;
 
+/**
+ * Controller responsible for creating and editing product tab
+ */
 public class CreateEditController extends TabController {
     private ProductViewModel model;
     private ProductOptionsViewModel productOptions;
@@ -41,15 +44,22 @@ public class CreateEditController extends TabController {
 
     }
 
+    /**
+     * Sets model for tab
+     * @param model
+     */
     public void setModel(ProductViewModel model) {
         this.model = model;
         nameField.textProperty().bindBidirectional(model.getNameProperty());
         priceField.textProperty().bindBidirectional(model.getPriceProperty());
         categoryChoice.setValue(model.getCategoryProperty().getValue());
+        productTypeChoice.setItems
+                (FXCollections.observableArrayList(model.getCategoryProperty().getValue().getProductTypes()));
         productTypeChoice.setValue(model.getProductTypeProperty().getValue());
         productTypeChoice.valueProperty()
                 .addListener((observable, oldValue, newValue) ->
                         model.getProductTypeProperty().setValue((ProductType)newValue));
+
         setImage();
     }
     public void setImage(){
@@ -79,17 +89,19 @@ public class CreateEditController extends TabController {
         return productOptions;
     }
 
+    /**
+     * Sets avaible product options for given product
+     * @param productOptions
+     */
     public void setProductOptions(ProductOptionsViewModel productOptions) {
         this.productOptions = productOptions;
         categoryChoice.setItems(productOptions.getCategories());
-        categoryChoice
-                .getSelectionModel()
-                .selectedItemProperty()
-                .addListener((observable, oldValue, newValue) ->
-                        productTypeChoice.setItems
-                                (FXCollections.observableArrayList(((Category)newValue).getProductTypes())));
     }
 
+    /**
+     * Triggers image picker window
+     * @param actionEvent
+     */
     public void pickImage(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
@@ -112,6 +124,11 @@ public class CreateEditController extends TabController {
 
     }
 
+    /**
+     * Load image from file
+     * @param file
+     * @return
+     */
     public Picture loadImage(File file){
         try {
             Picture pic = new Picture();
@@ -124,6 +141,11 @@ public class CreateEditController extends TabController {
         }
     }
 
+    /**
+     * Extracts file extension from file
+     * @param path
+     * @return
+     */
     private String getExtension(String path) {
         int dot = path.lastIndexOf('.');
         return path.substring(dot + 1);
@@ -134,10 +156,18 @@ public class CreateEditController extends TabController {
         setImage();
     }
 
+    /**
+     * Sends request to open product features tab
+     * @param actionEvent
+     */
     public void openProductFeatures(ActionEvent actionEvent) {
         TabMediator.openFeatures(getModel());
     }
 
+    /**
+     * Sends request to open product discounts
+     * @param actionEvent
+     */
     public void openProductDiscounts(ActionEvent actionEvent) {
         TabMediator.openDiscounts(getModel());
     }

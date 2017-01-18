@@ -18,6 +18,9 @@ import javafx.scene.control.Tab;
 
 import java.time.LocalDate;
 
+/**
+ * Mediator pattern for some decoupling in interactions between tab controllers and ShopItemService
+ */
 public class TabMediator {
     private static TabsController tabsController;
     private static OverviewController overviewController;

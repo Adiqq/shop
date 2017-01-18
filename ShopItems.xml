@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_112" class="java.beans.XMLDecoder">
+ <object class="Domain.ShopItems" id="ShopItems0">
+  <void property="products">
+   <void method="add">
+    <object class="Domain.Products.Gitara">
+     <void property="name">
+      <string>test</string>
+     </void>
+     <void property="price">
+      <object class="Domain.Common.Money">
+       <void property="value">
+        <string>5.00</string>
+       </void>
+      </object>
+     </void>
+     <void property="productType">
+      <object class="Domain.Products.ProductType">
+       <void property="type">
+        <string>Elektryczna</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Domain.Products.InstrumentKlawiszowy">
+     <void property="name">
+      <string>test</string>
+     </void>
+     <void property="price">
+      <object class="Domain.Common.Money">
+       <void property="value">
+        <string>5.00</string>
+       </void>
+      </object>
+     </void>
+     <void property="productType">
+      <object class="Domain.Products.ProductType">
+       <void property="type">
+        <string>Młoteczkowy</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Domain.Products.Gitara">
+     <void property="name">
+      <string>test</string>
+     </void>
+     <void property="price">
+      <object class="Domain.Common.Money">
+       <void property="value">
+        <string>5.00</string>
+       </void>
+      </object>
+     </void>
+     <void property="productType">
+      <object class="Domain.Products.ProductType">
+       <void property="type">
+        <string>Akustyczna</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>

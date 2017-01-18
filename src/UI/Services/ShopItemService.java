@@ -14,6 +14,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Service responsible for retrieving and persisting ShopItems object
+ */
 public class ShopItemService {
     private ObservableList<ProductViewModel> allProducts;
     private ProductOptionsViewModel productOptions;

@@ -8,6 +8,9 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Optional;
 
+/**
+ *  Aggregate class for persistance and providing data for UI
+ */
 public class ShopItems {
     private Collection<ShopService> services;
     private Collection<Product> products;

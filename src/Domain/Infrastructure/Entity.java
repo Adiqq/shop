@@ -2,6 +2,9 @@ package Domain.Infrastructure;
 
 import java.util.UUID;
 
+/**
+ *  Abstract class for object comparable by id
+ */
 public abstract class Entity implements Validatable {
     private UUID id;
 

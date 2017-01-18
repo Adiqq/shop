@@ -1,12 +1,16 @@
 package Domain.Products;
 
 import Domain.Common.Money;
+import Domain.Infrastructure.ValidationResult;
 import Domain.Services.ShopService;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ *  Abstract class for products
+ */
 public abstract class Product extends ShopService {
     private Picture picture;
     private final Category category;
@@ -69,5 +73,24 @@ public abstract class Product extends ShopService {
 
     public void setProductDiscounts(Collection<Discount> productDiscounts) {
         this.productDiscounts = productDiscounts;
+    }
+
+    @Override
+    public ValidationResult validate() {
+        List<String> errors = new ArrayList<>();
+        if(getName() == null || getName().isEmpty()){
+            errors.add("Name is empty");
+        }
+        if(getPrice() == null || !getPrice().hasValue()){
+            errors.add("Price is not set");
+        }
+        if(getCategory() == null || getCategory().getCategory() == null || getCategory().getCategory().isEmpty()){
+            errors.add("Category is not set");
+        }
+        if(getProductType() == null || getProductType().getType() == null || getProductType().getType().isEmpty()){
+            errors.add("Product type is not set");
+        }
+
+        return new ValidationResult(errors);
     }
 }
