@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.Product.DiscountCreateEditController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0"
+            prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="UI.Controller.Product.DiscountCreateEditController">
    <children>
        <GridPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="320.0">
            <columnConstraints>
@@ -21,7 +21,8 @@
               <Label text="Początek" />
               <Label text="Koniec" GridPane.rowIndex="1" />
             <Label text="Zniżka" GridPane.rowIndex="2" />
-            <Slider fx:id="percentageSlider" majorTickUnit="5.0" max="50.0" min="5.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Slider fx:id="percentageSlider" majorTickUnit="5.0" max="50.0" min="5.0" minorTickCount="1"
+                    showTickLabels="true" showTickMarks="true" snapToTicks="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <DatePicker fx:id="beginDatePicker" GridPane.columnIndex="1" />
             <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
           </children>

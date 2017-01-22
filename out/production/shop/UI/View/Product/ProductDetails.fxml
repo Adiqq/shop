@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.Product.DetailsController">
    <children>
        <Label layoutX="14.0" layoutY="14.0" text="Detale" />
        <GridPane layoutX="14.0" layoutY="31.0">
            <columnConstraints>
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="56.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="144.0" />
            </columnConstraints>
            <rowConstraints>
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -38,18 +32,18 @@
               <Label fx:id="priceLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
           </children>
        </GridPane>
-       <AnchorPane layoutX="253.0" layoutY="258.0" prefHeight="26.0" prefWidth="150.0">
+       <AnchorPane layoutX="228.0" layoutY="258.0" prefHeight="26.0" prefWidth="175.0">
           <children>
-              <FlowPane hgap="5.0" prefHeight="70.0" prefWidth="161.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <FlowPane hgap="5.0" layoutX="10.0" prefHeight="26.0" prefWidth="165.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                  <children>
-                     <Button mnemonicParsing="false" onAction="#create" text="Create" />
-                     <Button mnemonicParsing="false" onAction="#edit" text="Edit" />
-                     <Button mnemonicParsing="false" onAction="#delete" text="Delete" />
+                     <Button mnemonicParsing="false" onAction="#create" text="Utwórz" />
+                     <Button mnemonicParsing="false" onAction="#edit" text="Edytuj" />
+                     <Button mnemonicParsing="false" onAction="#delete" text="Usuń" />
                  </children>
               </FlowPane>
           </children>
        </AnchorPane>
-      <ImageView fx:id="imageView" fitHeight="230.0" fitWidth="200.0" layoutX="189.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageView" fitHeight="230.0" fitWidth="175.0" layoutX="214.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="101.0" prefHeight="144.0" prefWidth="165.0">
          <content>
             <TextFlow fx:id="textFlow" prefWidth="150.0" />

@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0"
-            prefWidth="357.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="UI.Controller.Product.FeaturesController">
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.Product.FeaturesController">
    <children>
-      <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="228.0" fx:id="featuresTable">
+      <TableView fx:id="featuresTable" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="300.0">
         <columns>
-            <TableColumn prefWidth="75.0" text="Nazwa" fx:id="name" />
-            <TableColumn prefWidth="75.0" text="Wartość" fx:id="value" />
+            <TableColumn fx:id="name" prefWidth="116.0" resizable="false" text="Nazwa" />
+            <TableColumn fx:id="value" prefWidth="177.0" resizable="false" text="Wartość" />
         </columns>
       </TableView>
       <FlowPane layoutX="14.0" layoutY="214.0" prefHeight="0.0" prefWidth="221.0">
          <children>
-            <Button mnemonicParsing="false" text="Dodaj" onAction="#add" />
-            <Button mnemonicParsing="false" text="Edytuj" onAction="#edit" />
-            <Button mnemonicParsing="false" text="Usuń" onAction="#delete" />
+            <Button mnemonicParsing="false" onAction="#add" text="Dodaj" />
+            <Button mnemonicParsing="false" onAction="#edit" text="Edytuj" />
+            <Button mnemonicParsing="false" onAction="#delete" text="Usuń" />
          </children>
       </FlowPane>
    </children>

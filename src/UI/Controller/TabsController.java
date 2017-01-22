@@ -74,7 +74,7 @@ public class TabsController implements Initializable {
         this.itemsService = itemsService;
         TabMediator.setTabsController(this);
         OverviewController overview = this.createTab(
-                "Products",
+                "Produkty",
                 "/UI/View/Product/ProductOverview.fxml",
                 false);
         TabMediator.setOverviewController(overview);
